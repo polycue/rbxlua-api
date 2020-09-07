@@ -6,7 +6,7 @@ return function(func, ...)
 	assert(type(func) == "function")
 	
 	local args = {...}
-	local count = select("#", ...)
+	local count = #args
 	
 	local bindable = Instance.new("BindableEvent")
 	bindable.Event:Connect(function()
