@@ -3,9 +3,9 @@
   "tree": {
     "$className": "DataModel",
     "Workspace": {
-      "$className": "Workspace",
+      "$className": "ReplicatedStorage",
       "$ignoreUnknownInstances": true,
-      "$path": "src/Workspace"
+      "$path": "src/"
     }
   }
 }
