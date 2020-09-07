@@ -3,12 +3,8 @@ local spawn
 local storage
 
 if game:GetService("ReplicatedStorage"):FindFirstChild("Nevermore") then
-	if script.Configuration.deleteFastSpawnIfNevermoreEngineIsFound.Value == true then
-		print("NevermoreEngine has been detected, removing fastSpawn...")
-		script.fastSpawn:Destroy()
-	else
-		print("NevermoreEngine has been detected")
-	end
+	print("NevermoreEngine has been detected, removing fastSpawn...")
+	script.fastSpawn:Destroy()
 	local require = require(game:GetService("ReplicatedStorage"):FindFirstChild("Nevermore"))
 	spawn = require("fastSpawn")
 else
