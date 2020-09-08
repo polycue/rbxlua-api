@@ -1,0 +1,6 @@
+[package]
+name = "polycue/rbxlua-api"
+author = "polycue"
+license = "GPL-3.0"
+content_root = "src"
+version = "1.0.0"
