@@ -33,7 +33,7 @@ function module:bulkInject(debug, ...)
 		self:inject(data)
 	end
 	if debug == true then
-		print(#encDataTable .. " bytes injected into " .. name)
+		print(#encDataTable .. " bytes injected into " .. self.Name)
 	end
 end
 function module:inject(data, debug)
@@ -58,9 +58,9 @@ function module:inject(data, debug)
 		end
 		if debug ~= nil and debug == true then
 			if #encoded ~= 1 then
-				print(#encoded .. " bytes injected into " .. name)
+				print(#encoded .. " bytes injected into " .. self.Name)
 			else
-				print(#encoded .. " byte injected into " .. name)
+				print(#encoded .. " byte injected into " .. self.Name)
 			end
 		end
 		table.insert(self.Table, #self.Table + 1, encoded)
