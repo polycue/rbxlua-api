@@ -18,7 +18,8 @@ local lemur = require("modules.lemur")
 local habitat = lemur.Habitat.new()
 
 -- We'll put all of our library code and dependencies here
-local Root = habitat.game:GetService("ReplicatedStorage")
+local Root = lemur.Instance.new("Folder")
+Root.Name = "Root"
 
 -- Load all of the modules specified above
 for _, module in ipairs(LOAD_MODULES) do
@@ -27,7 +28,12 @@ for _, module in ipairs(LOAD_MODULES) do
 	container.Parent = Root
 end
 
-local runTests = habitat:loadFromFs("bin/run-tests.server.lua")
+-- Load TestEZ and run our tests
+local TestEZ = habitat:require(Root.TestEZ)
 
--- When Lemur implements a proper scheduling interface, we'll use that instead.
-habitat:require(runTests)
+local results = TestEZ.TestBootstrap:run(Root.Library, TestEZ.Reporters.TextReporter)
+
+-- Did something go wrong?
+if results.failureCount > 0 then
+	os.exit(1)
+end
