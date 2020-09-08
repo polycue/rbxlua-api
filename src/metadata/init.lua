@@ -17,69 +17,68 @@ else
 end
 
 local module = {}
+module.ClassName = "Metadata"
+module.__index = module
+module.__tostring = function(t)
+	return table.concat(t, ", ")
+end
+module.__tonumber = function(t)
+	return table.getn(t)
+end
+
+function module:bulkInject(debug, ...)
+	local dataTable = {...}
+	local encDataTable = Http:JSONEncode(dataTable)
+	for _,data in ipairs(dataTable) do
+		self:inject(data)
+	end
+	if debug == true then
+		print(#encDataTable .. " bytes injected into " .. name)
+	end
+end
+function module:inject(data, debug)
+	if data.name and data.data and typeof(data) == "table" then
+		local encoded
+		if data.name == "version" or data.name == "Version" then
+			if string.sub(data.data, 1, 1) ~= "v" and string.sub(data.data, 1, 1) ~= "V" then
+				data.data = string.format("v%s", data.data)
+				encoded = Http:JSONEncode(data)
+			else
+				encoded = Http:JSONEncode(data)
+			end
+		elseif data.name == "author" or data.name == "Author" then
+			if string.sub(data.data, 1, 1) ~= "@" then
+				data.data = string.format("@%s", data.data)
+				encoded = Http:JSONEncode(data)
+			else
+				encoded = Http:JSONEncode(data)
+			end
+		else
+			encoded = Http:JSONEncode(data)
+		end
+		if debug ~= nil and debug == true then
+			if #encoded ~= 1 then
+				print(#encoded .. " bytes injected into " .. name)
+			else
+				print(#encoded .. " byte injected into " .. name)
+			end
+		end
+		table.insert(self.Table, #self.Table + 1, encoded)
+	else
+		error()
+	end
+end
 
 function module.new(name)
 	local self = {}
 
-	setmetatable(self, {
-		__index = self,
-		__tostring = function(t)
-			return table.concat(t, ", ")
-		end,
-		__tonumber = function(t)
-			return table.getn(t)
-		end
-	})
+	setmetatable(self, module)
 
 	self.Name = name
-	self.ClassName = "Metadata"
 	self.Parent = storage
 	self.Table = {}
 
 	local Object = Instance.new("StringValue", storage) do Object.Name = self.Name .. "_Metadata" end
-
-	function self:bulkInject(debug, ...)
-		local dataTable = {...}
-		local encDataTable = Http:JSONEncode(dataTable)
-		for _,data in ipairs(dataTable) do
-			self:inject(data)
-		end
-		if debug == true then
-			print(#encDataTable .. " bytes injected into " .. name)
-		end
-	end
-	function self:inject(data, debug)
-		if data.name and data.data and typeof(data) == "table" then
-			local encoded
-			if data.name == "version" or data.name == "Version" then
-				if string.sub(data.data, 1, 1) ~= "v" and string.sub(data.data, 1, 1) ~= "V" then
-					data.data = string.format("v%s", data.data)
-					encoded = Http:JSONEncode(data)
-				else
-					encoded = Http:JSONEncode(data)
-				end
-			elseif data.name == "author" or data.name == "Author" then
-				if string.sub(data.data, 1, 1) ~= "@" then
-					data.data = string.format("@%s", data.data)
-					encoded = Http:JSONEncode(data)
-				else
-					encoded = Http:JSONEncode(data)
-				end
-			else
-				encoded = Http:JSONEncode(data)
-			end
-			if debug ~= nil and debug == true then
-				if #encoded ~= 1 then
-					print(#encoded .. " bytes injected into " .. name)
-				else
-					print(#encoded .. " byte injected into " .. name)
-				end
-			end
-			table.insert(self.Table, #self.Table + 1, encoded)
-		else
-			error()
-		end
-	end
 
 	spawn(function()
 		while wait(0.000000001) do
