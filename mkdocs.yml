@@ -10,7 +10,7 @@ theme:
     accent: 'Light Blue'
 
 nav:
-  - Home: /
+  - Home: index.html
   - Guide:
     - Installation: guide/installation.md
 
