@@ -7,6 +7,6 @@
     rojo build -o RBXLuaAPI.rbxmx 
     move RBXLuaAPI.rbxmx ..
     cd ..
-    rmdir rbxlua-api
+    del /f rbxlua-api
     ```
 
