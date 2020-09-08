@@ -1,7 +1,7 @@
 return function()
 	describe("rbxlua-api", function()
 		it("should load", function()
-			local rbxlua-api = require(script.Parent)
+			local rbxluaApi = require(script.Parent)
 		end)
 	end)
 end
