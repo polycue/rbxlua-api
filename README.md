@@ -1,5 +1,5 @@
 <div align="center">
   <h1>Polycue RBXLua API</h1>
-  <img src="https://travis-ci.com/polycue/rbxlua-api.svg?branch=master" />
+  <img alt="CI" src="https://github.com/polycue/rbxlua-api/workflows/CI/badge.svg" />
 </div>
-Polycue API for RBXLua
+<p>Polycue API for RBXLua</p>
