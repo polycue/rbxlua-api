@@ -7,8 +7,6 @@ There is one supported way to get started with RBXLuaAPI.
     cd rbxlua-api
     rojo build -o RBXLuaAPI.rbxmx 
     move RBXLuaAPI.rbxmx ..
-    del /f /s /q *.*
     cd ..
-    rmdir /s /q rbxlua-api
     ```
 
