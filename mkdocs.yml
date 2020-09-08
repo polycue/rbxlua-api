@@ -1,6 +1,6 @@
-site_name: Roact Documentation
-site_url: https://roblox.github.io/roact/
-repo_name: Roblox/roact
+site_name: Polycue | RBXLua API
+site_url: https://polycue.github.io/rbxlua-api/
+repo_name: polycue/rbxlua-api
 repo_url: https://github.com/polycue/rbxlua-api/
 
 theme:
