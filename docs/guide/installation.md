@@ -6,5 +6,6 @@
     cd rbxlua-api
     rojo build -o RBXLuaAPI.rbxmx 
     move RBXLuaAPI.rbxmx ..
+    cd ..
     ```
 
