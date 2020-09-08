@@ -20,7 +20,7 @@ local module = {}
 
 function module.new(name)
 	local self = {}
-	
+
 	setmetatable(self, {
 		__index = self,
 		__tostring = function(t)
@@ -30,15 +30,14 @@ function module.new(name)
 			return table.getn(t)
 		end
 	})
-	
-	
+
 	self.Name = name
 	self.ClassName = "Metadata"
 	self.Parent = storage
 	self.Table = {}
-	
+
 	local Object = Instance.new("StringValue", storage) do Object.Name = self.Name .. "_Metadata" end
-	
+
 	function self:bulkInject(debug, ...)
 		local dataTable = {...}
 		local encDataTable = Http:JSONEncode(dataTable)
@@ -81,13 +80,13 @@ function module.new(name)
 			error()
 		end
 	end
-	
+
 	spawn(function()
 		while wait(0.000000001) do
 			Object.Value = Http:JSONEncode(self)
 		end
 	end)
-	
+
 	return self
 end
 
