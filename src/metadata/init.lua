@@ -19,7 +19,6 @@ end
 local module = {}
 
 function module.new(name)
-	local env = getfenv(2)
 	local self = {}
 	
 	setmetatable(self, {
@@ -28,7 +27,7 @@ function module.new(name)
 			return table.concat(t, ", ")
 		end,
 		__tonumber = function(t)
-			return table.getn(self)
+			return table.getn(t)
 		end
 	})
 	
