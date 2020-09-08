@@ -10,7 +10,7 @@ theme:
     accent: 'Light Blue'
 
 nav:
-  - Home: index.html
+  - Home: /rbxlua-api/index.html
   - Guide:
     - Installation: guide/installation.md
 
