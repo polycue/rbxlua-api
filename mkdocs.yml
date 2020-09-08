@@ -1,4 +1,4 @@
-site_name: Polycue | RBXLua API
+site_name: RBXLua API for Polycue
 site_url: https://polycue.github.io/rbxlua-api/
 repo_name: polycue/rbxlua-api
 repo_url: https://github.com/polycue/rbxlua-api/
@@ -11,6 +11,8 @@ theme:
 
 nav:
   - Home: index.md
+  - Guide:
+    - Installation: 
 
 extra_css:
   - extra.css
