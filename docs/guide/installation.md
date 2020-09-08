@@ -1,7 +1,9 @@
-There is currently no easy way to get rbxlua-api
 
-```batch
-git clone https://github.com/polycue/rbxlua-api.git
-cd rbxlua-api
-rojo build -o RBXLuaAPI.rbxmx
-```
+### Method 1: Command Line
+  * Copy and paste this command into the command line: 
+    ```batch
+    git clone https://github.com/polycue/rbxlua-api.git
+    cd rbxlua-api
+    rojo build -o RBXLuaAPI.rbxmx
+    ```
+
