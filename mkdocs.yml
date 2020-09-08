@@ -12,7 +12,7 @@ theme:
 nav:
   - Home: index.md
   - Guide:
-    - Installation: 
+    - Installation: guide/installation.md
 
 extra_css:
   - extra.css
