@@ -1,3 +1,4 @@
+There is one supported way to get started with RBXLuaAPI.
 
 ### Method 1: Command Line
   * Copy and paste this command into the command line: 
