@@ -2,7 +2,7 @@
   "name": "project",
   "tree": {
     "$className": "DataModel",
-    "Workspace": {
+    "ReplicatedStorage": {
       "$className": "ReplicatedStorage",
       "$ignoreUnknownInstances": true,
       "$path": "src/"
