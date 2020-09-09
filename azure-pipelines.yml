@@ -12,7 +12,7 @@ pool:
 steps:
 
 - script: |
-    apt-get install git
+    sudo apt-get install git
     git submodule init
     git submodule update
   displayName: 'update modules'
