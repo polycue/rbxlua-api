@@ -8,7 +8,7 @@ pool:
 
 steps:
 - script: sudo apt-get dist-upgrade
-  displayName: update ubuntu packages
+  displayName: 'update ubuntu packages'
   
 - script: |
     git submodule init
