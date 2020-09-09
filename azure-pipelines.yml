@@ -19,4 +19,4 @@ steps:
 
 - script: |
     sudo apt install wine
-    winehq build.bat
+    wine build.bat
