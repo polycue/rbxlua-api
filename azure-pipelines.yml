@@ -1,7 +1,4 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# This Pipeline helps with updating modules because dependabot was not cooperating with me
 
 trigger:
 - master
@@ -10,9 +7,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-
+- script: sudo apt-get dist-upgrade
+  displayName: update ubuntu packages
+  
 - script: |
-    sudo apt-get dist-upgrade
     git submodule init
     git submodule update
   displayName: 'update modules'
