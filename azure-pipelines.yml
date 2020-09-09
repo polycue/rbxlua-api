@@ -16,7 +16,13 @@ steps:
     git submodule init
     git submodule update
   displayName: 'update modules'
-- task: BatchScript@1
-  inputs:
-    filename: 'build.bat'
-    modifyEnvironment: false
+
+- script: |
+    sudo dpkg --add-architecture i386 
+    wget -nc https://dl.winehq.org/wine-builds/winehq.key
+    sudo apt-key add winehq.key
+    sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
+    sudo apt update
+    sudo apt install --install-recommends winehq-stable
+    wineconsole cmd
+    start build.bat
