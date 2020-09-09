@@ -24,5 +24,4 @@ steps:
     sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
     sudo apt update
     sudo apt install --install-recommends winehq-stable
-    wineconsole cmd
-    start build.bat
+    wine build.EXE
