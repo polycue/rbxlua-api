@@ -12,6 +12,6 @@ pool:
 steps:
 
 - script: |
-    git submodule init
-    git submodule update
+    echo git submodule init
+    echo git submodule update
   displayName: 'update modules'
