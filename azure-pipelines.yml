@@ -16,3 +16,7 @@ steps:
     git submodule init
     git submodule update
   displayName: 'update modules'
+- task: BatchScript@1
+  inputs:
+    filename: 'build.bat'
+    modifyEnvironment: false
