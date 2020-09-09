@@ -18,5 +18,5 @@ steps:
   displayName: 'update modules'
 
 - script: |
-    sudo apt install wine
+    sudo apt install wine-stable
     wine build.bat
