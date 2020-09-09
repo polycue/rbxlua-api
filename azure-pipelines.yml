@@ -19,4 +19,5 @@ steps:
 
 - script: |
     sudo apt install wine-stable
-    wine build.bat
+    wine cmd
+    build.bat
