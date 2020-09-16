@@ -11,6 +11,8 @@ steps:
   displayName: 'update ubuntu packages'
   
 - script: |
+    git config --global user.email "hopejwest32@gmail.com"
+    git config --global user.name "Hoidberg"
     git init
     git tag
     git submodule init
