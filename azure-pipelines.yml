@@ -17,6 +17,6 @@ steps:
     git tag
     git submodule init
     git submodule update
-    git diff --output=diff.txt
+    git diff -m --output=diff.txt
     git commit -a
   displayName: 'update modules'
