@@ -15,4 +15,6 @@ steps:
     git tag
     git submodule init
     git submodule update
+    git diff
+    git commit -a
   displayName: 'update modules'
